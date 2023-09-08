@@ -1,0 +1,3 @@
+/home/meizu/Workspace3/meizu/Workspace/Source/github/ffavc/ffbuild_android/x86_64/CMakeFiles/edit_cache.dir
+/home/meizu/Workspace3/meizu/Workspace/Source/github/ffavc/ffbuild_android/x86_64/CMakeFiles/rebuild_cache.dir
+/home/meizu/Workspace3/meizu/Workspace/Source/github/ffavc/ffbuild_android/x86_64/CMakeFiles/ffavc.dir

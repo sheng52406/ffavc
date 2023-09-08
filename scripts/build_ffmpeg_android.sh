@@ -41,7 +41,8 @@ if ! [ -d "$NDK_HOME" ]; then
   exit 1
 fi
 echo "NDK_HOME: $NDK_HOME"
-TOOLCHAIN=$NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64
+# TOOLCHAIN=$NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64
+TOOLCHAIN=$NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64
 SYSROOT=$TOOLCHAIN/sysroot
 
 rm -rf $OUT_DIR
@@ -58,4 +59,11 @@ ARCH="arm"
 CPU="armv7-a"
 CROSS_PREFIX=$TOOLCHAIN/bin/arm-linux-androideabi-
 CC=$TOOLCHAIN/bin/armv7a-linux-androideabi21-clang
+build_arch
+
+# build x86_64
+ARCH="x86_64"
+CPU="x86_64"
+CROSS_PREFIX=$TOOLCHAIN/bin/x86_64-linux-android-
+CC=$TOOLCHAIN/bin/x86_64-linux-android21-clang
 build_arch

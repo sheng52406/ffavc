@@ -95,6 +95,17 @@ elif [[ $(uname) == 'Linux' ]]; then
   make_dir $OUT_DIR/linux
   cp -r $SOURCE_DIR/out/linux/lib/*.a $OUT_DIR/linux
 
+  # build android
+  # 声明编译 x86_64 架构的，你也可以自己加上别的架构
+  ARCH="x86_64"
+  ../../scripts/build_ffmpeg_android.sh
+  rm -rf $OUT_DIR/android
+  # 复制头文件
+  make_dir $OUT_DIR/include
+  cp -r $SOURCE_DIR/out/android/$ARCH/include/. $OUT_DIR/include
+  make_dir $OUT_DIR/android/$ARCH
+  cp -r $SOURCE_DIR/out/android/$ARCH/lib/*.a $OUT_DIR/android/$ARCH
+
 elif [[ $(uname) == *MINGW64* ]]; then
   # build win64
   win_build x64
